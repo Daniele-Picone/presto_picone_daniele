@@ -2,10 +2,15 @@
            <div class="logo">Presto.it</div>
            @auth
            <p>Ciao , {{Auth::user()->name}}</p>
-           <form action="{{route('logout')}}" method="POST" >
+           <li>
+          <form 
+           action="{{route('logout')}}"
+           method="POST"> 
+
             @csrf
-            Logout
-           </form>
+             <button class="nav-link" type="submit" >Loguot</button>
+            </form>
+        </li>
            @endauth
           <ul>
             <li><a href="{{route('hompage')}}">Home</a></li>

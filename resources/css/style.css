@@ -272,3 +272,50 @@ body {
   -webkit-appearance: none;
   margin: 0px;
 }  
+
+
+/* card custom */
+
+.article-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    max-width: 300px;
+    margin: 20px auto;
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.article-card:hover {
+    transform: translateY(-10px);
+
+}
+
+/* Image */
+.article-card-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Card Body */
+.article-card-body {
+    padding: 15px;
+}
+
+.article-card-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 10px 0;
+    color: #333;
+}
+
+.article-card-description {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 15px;
+    height: 60px;
+    overflow: hidden;
+}

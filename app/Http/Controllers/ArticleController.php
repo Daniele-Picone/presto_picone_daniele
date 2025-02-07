@@ -22,4 +22,5 @@ class ArticleController extends Controller
     
     return view('article.create'  );
    }
+ 
 }
