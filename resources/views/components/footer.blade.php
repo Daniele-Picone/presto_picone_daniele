@@ -11,12 +11,11 @@
           <div class="footer-section">
             <h4>Link Utili</h4>
             <ul>
-              <li><a href="{{route('hompage')}}">Home</a></li>
+              <li><a href="">Home</a></li>
               <li><a href="#">Articoli</a></li>
               <li><a href="#">Categorie</a></li>
-              <li><a href="#">Chi Siamo</a></li>
-              <li><a href="#">Accedi</a></li>
-              <li><a href="#">Registrati</a></li>
+              <li><a href="{{route('become.revisor')}}">DIVENTA REVISORE</a></li>
+              
             </ul>
           </div>
           <div class="footer-section">

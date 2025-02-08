@@ -1,5 +1,8 @@
 <div>
-     
+<div class="article-form-container">
+
+
+
    <form  wire:submit="store"  >
    
       @if (session()->has('success'))
@@ -56,6 +59,6 @@
 
 
 
-
+   </div>
 
 </div>

@@ -1,15 +1,15 @@
 <x-layout>
 
 
-<div class="container-fluid">
+<div class="container-fluid mt-5">
     <div class="row justify-content-center align-items-center text-center">
         <div class="col-12">
-            <h1 class="display-1" > Articoli disponibili </h1>
+        <h2>Crea un Nuovo Articolo</h2>
         </div>
 
 
-<div class="article-form-container">
-    <h2>Crea un Nuovo Articolo</h2>
+<div class=" header-custom mb-5 ">
+    
   <livewire:create-article-form>
 
   </livewire:create-article-form>

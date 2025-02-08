@@ -1,8 +1,20 @@
     <nav>
            <div class="logo">Presto.it</div>
-           @auth
-           <p>Ciao , {{Auth::user()->name}}</p>
-           <li>
+           <div class="profile">
+            
+          <div class="auth">
+          @auth
+             
+             <p>Ciao , {{Auth::user()->name}}</p>
+             @if (Auth::user()->is_revisor)
+              <li class="revisor-zone" > <a href="{{route('revisor.index')}}">Zona Revisori
+                <span >{{App\Models\Article::toBerevisedCount()}}</span>
+              </a></li>
+              @endif
+          </div>
+
+
+           <li class="logout" >
           <form 
            action="{{route('logout')}}"
            method="POST"> 
@@ -12,9 +24,10 @@
             </form>
         </li>
            @endauth
+           </div>
+
           <ul>
-            <li><a href="{{route('hompage')}}">Home</a></li>
-            <li><a href="">Articoli</a></li>
+            <li><a href="{{route('homepage')}}">Home</a></li>
          @auth
             <li><a href="{{route('create.article')}}">Crea Articolo</a></li>
         @endauth
