@@ -390,3 +390,28 @@ body {
   transition: 0.3s all;
 }
 
+/* search */
+
+.search input{
+  border-radius: 9px;
+  padding: 5px;
+  border-color: #3498db ;
+
+}
+.search input:focus {
+  border-color: #3498db;
+  outline: none;
+}
+.search button{
+  background-color:#3498db ;
+  padding: 5px;
+  border-radius: 9px;
+  transition: 0.3s; 
+  color: white;
+  border-color: #3498db ;
+}
+
+.search button:hover{
+  transform: scale(0.9);
+}
+

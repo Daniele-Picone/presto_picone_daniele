@@ -26,6 +26,16 @@
            @endauth
            </div>
 
+            <form action="{{route('article.search')}}" role="search" method="get" >
+            <div class="search">
+             <input type="search" placeholder="Search" aria-label="search" name="query" >
+             <button type="submit" class="serach-button" id="basic-addon2" > Search </button>
+
+           </div>
+
+            </form>
+
+
           <ul>
             <li><a href="{{route('homepage')}}">Home</a></li>
          @auth
