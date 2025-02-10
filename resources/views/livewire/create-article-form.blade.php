@@ -40,7 +40,7 @@
      @foreach($images as $key => $image)
          <div class="col d-flex flex-column  align-items-center my-3">
             <img src="{{ $image->temporaryUrl() }}" class="img-preview mb-2 shadow rounded" >
-            <button type="button" class="btn btn-danger" wire:click="removeImage({{ $key }})">X</button>
+            <button type="button" class="btn-remove-img-form" wire:click="removeImage({{ $key }})">X</button>
          </div>
          @endforeach 
          
