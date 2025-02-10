@@ -2,15 +2,15 @@
 <div class="article-form-container">
 
 
+   @if (session()->has('success'))
+          <div class="alert alert-succes text-center" > 
+             {{session('succes')}}
+          </div>
+   
+   @endif
 
    <form  wire:submit="store"  >
    
-      @if (session()->has('success'))
-             <div class="alert alert-succes text-center" > 
-                {{session('succes')}}
-             </div>
-      
-      @endif
     
    <div class="input-group ">
         <label for="title">Inserisci Titolo</label>
@@ -20,6 +20,39 @@
        <p class=" text-danger" >{{$message}}</p>
      @enderror
     
+     <div class="input-gorup mb-4 mt-4">
+     <input type="file" wire:model="temporary_images"  multiple placeholder="img/">
+
+       @error('temporary_images')
+          <p class="text-danger" > {{$message}}</p>
+       @enderror
+       @error('temporary_images')
+       <p class="text-danger" >{{$message}}</p>   
+         @enderror
+     </div>
+
+    
+  
+     @if(!empty($images))
+     <div class="row justify-content-center align-items-center "> 
+     
+     <p>Photo preview:</p>
+     @foreach($images as $key => $image)
+         <div class="col d-flex flex-column  align-items-center my-3">
+            <img src="{{ $image->temporaryUrl() }}" class="img-preview mb-2 shadow rounded" >
+            <button type="button" class="btn btn-danger" wire:click="removeImage({{ $key }})">X</button>
+         </div>
+         @endforeach 
+         
+      </div>
+     @endif
+    
+
+
+
+
+
+
      <div class="input-group">
         <label for="category">Inserisci Categoria</label>
         <select id="category" class="input-group" wire:model="category">

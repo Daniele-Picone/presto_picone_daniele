@@ -7,11 +7,20 @@ use Livewire\Component;
 use App\Models\Category;
 use Livewire\Attributes\Validate;
 use Illuminate\Support\Facades\Auth;
+use Livewire\WithFileUploads;
 
 class CreateArticleForm extends Component
 {
+    use WithFileUploads;
    #[Validate('required|min:3')]
    public $title;
+     
+
+   public $images = [];
+   public $temporary_images;
+
+
+
 
    #[Validate('required')]
    public $category;
@@ -36,13 +45,23 @@ class CreateArticleForm extends Component
        'user_id'=> Auth::id(),
 
 ]);
+    
+if(count($this->images) > 0){
+    if(count($this->images) > 0){
 
-  $this->reset();
+        foreach($this->images as $image){
+    
+            $this->article->images()->create(['path'=> $image->store('images','public')]);
+        }
+        dd($this->images);
+}
 
-  session()->flash('succes','Articolo Creato Correttamente');
-
+ $this->reset();
+session()->flash('succes','Articolo Creato Correttamente');
+ 
 
    }
+}
 
     public function mount(){
         $this->categories = Category::all();
@@ -55,5 +74,23 @@ class CreateArticleForm extends Component
     {    
       
         return view('livewire.create-article-form');
+    }
+
+    public function updatedTemporaryImages()
+    {
+        if ($this->validate([
+            'temporary_images.*' => 'image|max:1024', 
+            'temporary_images' => 'max:6',
+        ])) {
+            foreach ($this->temporary_images as $image) {
+                $this->images[] = $image;
+            }
+        }
+    }
+    
+    public function removeImage($key){
+        if(in_array($key, array_keys($this->images))){
+            unset($this->images[$key]);
+        }
     }
 }

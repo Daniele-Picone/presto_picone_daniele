@@ -10,7 +10,7 @@ class PublicController extends Controller
     public function homepage(){
 
 
-        $articles = Article::where('is_accepted', null)->orderBy('created_at','desc')->get();
+        $articles = Article::whereNotNull('is_accepted')->orderBy('created_at','desc')->get();
         return view('welcome', compact('articles'));
     }
 
@@ -21,6 +21,7 @@ class PublicController extends Controller
     }
     public function setLanguage($lang){
         session()->put('locale', $lang);
+      
         return redirect()->back();
 
     }
