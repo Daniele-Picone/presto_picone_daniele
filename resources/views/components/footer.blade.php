@@ -27,6 +27,13 @@
             </div>
           </div>
         </div>
+        <div class="footer-section footer-language">
+           <h4>Cambia Lingua</h4>
+           <x-_locale lang="it" ></x-_locale>
+           <x-_locale lang="en" ></x-_locale>
+           <x-_locale lang="es" ></x-_locale>
+           
+          </div>
         <p style="text-align:center; margin-top: 20px; font-size:0.9em;">&copy; 2025 Articolo. Tutti i diritti riservati.</p>
       </footer>
 

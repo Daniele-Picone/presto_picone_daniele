@@ -2,8 +2,8 @@
            <div class="logo">Presto.it</div>
            <div class="profile">
             
-          <div class="auth">
-          @auth
+             @auth
+             <div class="auth">
              
              <p>Ciao , {{Auth::user()->name}}</p>
              @if (Auth::user()->is_revisor)

@@ -1,6 +1,7 @@
 <x-layout>
 
 
+<div class="header-custom">
 <div class="register-container">
     <h2>Registrati</h2>
     <form action="{{route('register')}}" method="POST">
@@ -47,6 +48,7 @@
   </div>
 
 
+</div>
 
 
 

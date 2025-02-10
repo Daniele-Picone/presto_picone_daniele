@@ -1,7 +1,8 @@
 <x-layout>
 
 
-<div class="login-container">
+<div class="header-custom">
+<div class="login-container  ">
     <h2>Accedi</h2>
     <form action="{{route('login')}}" method="POST" >
         @csrf
@@ -25,6 +26,7 @@
     </form>
   </div>
 
+</div>
 
 
 

@@ -1,8 +1,8 @@
 <x-layout>
 <div class="container-fluid">
-    <div class="row justify-content-center align-items-center text-center">
-        <div class="col-12">
-            <h1 class="display-1" > Dashboard Revisor  </h1>
+    <div class="row mb-5 justify-content-center align-items-center text-center">
+        <div class="col-12  ">
+            <h1 class="display-1 mb-5" > Dashboard Revisor  </h1>
         </div>
         @if (session()->has('message'))
         <div class="row justify-content-center">
@@ -61,6 +61,8 @@
 
 
         </div>
+
+ </div>
 
 
 
