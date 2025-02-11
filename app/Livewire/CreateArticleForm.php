@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+use App\Jobs\GoogleVisonSafeSearch;
 use App\Models\Article;
 use Livewire\Component;
 use App\Models\Category;
@@ -53,6 +54,7 @@ if (count($this->images) > 0) {
         $newFileName = "articles/{$this->article->id}";
         $newImage = $this->article->images()->create(['path' => $image->store($newFileName, 'public')]);
         dispatch(new ResizeImage($newImage->path, 300, 300));
+        dispatch(new GoogleVisonSafeSearch($newImage->id));
     }
     File::deleteDirectory(storage_path('/app/livewire-tmp'));
 }
