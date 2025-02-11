@@ -2,15 +2,15 @@
 <div class="article-form-container">
 
 
-   @if (session()->has('success'))
-          <div class="alert alert-succes text-center" > 
-             {{session('succes')}}
-          </div>
-   
-   @endif
+        
 
    <form  wire:submit="store"  >
-   
+      @if (session()->has('success'))
+         <div class="alert alert-success text-center">
+            {{ session('success') }}
+         </div>
+      
+      @endif
     
    <div class="input-group ">
         <label for="title">Inserisci Titolo</label>

@@ -18,7 +18,7 @@
                     @if ($article_to_check->images && $article_to_check->images->count() > 0)
                         @foreach ($article_to_check->images as $image)
                             <div class="col-6 col-md-4 mb-4">
-                                <img src="{{ Storage::url($image->path) }}" alt="">
+                                <img src="{{ $image->getUrl(300,300) }}" alt="">
                             </div>
                         @endforeach
                     @else

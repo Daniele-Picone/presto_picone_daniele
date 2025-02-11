@@ -12,7 +12,8 @@
            active
            @endif 
            ">
-            <img src="{{Storage::url($image->path)}}" class="d-block w-100 rounded  shadow " alt=" immagine {{$key + 1}} dell'articolo {{$article->title}}">
+           
+            <img src="{{$image->getUrl(300,300)}}" class="d-block w-100 rounded  shadow " alt=" immagine {{$key + 1}} dell'articolo {{$article->title}}">
 
           </div>
           
@@ -40,7 +41,7 @@
   </div>
     <div class="article-show-body">
        <h1>{{$article->title}}</h1>
-       <p><a href="">{{$article->category->name}}</a></p>
+       <p><a href="{{route('byCategory',['category'=> $article->category])}}">{{$article->category->name}}</a></p>
         <p>{{$article->description}}</p>
         <p>{{$article->price}}</p>
     </div>

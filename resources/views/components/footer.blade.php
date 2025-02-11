@@ -14,7 +14,7 @@
               <li><a href="">Home</a></li>
               <li><a href="#">Articoli</a></li>
               <li><a href="#">Categorie</a></li>
-              <li><a href="{{route('become.revisor')}}">DIVENTA REVISORE</a></li>
+              <li><a href="{{route('become.revisor')}}">Lavora con noi</a></li>
               
             </ul>
           </div>

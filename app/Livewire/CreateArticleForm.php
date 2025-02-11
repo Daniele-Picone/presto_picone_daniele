@@ -5,9 +5,11 @@ namespace App\Livewire;
 use App\Models\Article;
 use Livewire\Component;
 use App\Models\Category;
+use App\Jobs\ResizeImage;
+use Livewire\WithFileUploads;
 use Livewire\Attributes\Validate;
 use Illuminate\Support\Facades\Auth;
-use Livewire\WithFileUploads;
+use Illuminate\Support\Facades\File;
 
 class CreateArticleForm extends Component
 {
@@ -46,21 +48,16 @@ class CreateArticleForm extends Component
 
 ]);
     
-if(count($this->images) > 0){
-    if(count($this->images) > 0){
-
-        foreach($this->images as $image){
-    
-            $this->article->images()->create(['path'=> $image->store('images','public')]);
-        }
-        dd($this->images);
+if (count($this->images) > 0) {
+    foreach ($this->images as $image) {
+        $newFileName = "articles/{$this->article->id}";
+        $newImage = $this->article->images()->create(['path' => $image->store($newFileName, 'public')]);
+        dispatch(new ResizeImage($newImage->path, 300, 300));
+    }
+    File::deleteDirectory(storage_path('/app/livewire-tmp'));
 }
-
- $this->reset();
-session()->flash('succes','Articolo Creato Correttamente');
- 
-
-   }
+$this->reset();
+    session()->flash('success', 'Articolo Creato Correttamente');
 }
 
     public function mount(){
