@@ -4,7 +4,7 @@
 
 <div class="article-card ">
 
-     <img src="{{$article->images->isNotEmpty() ? Storage::url($article->images->first()->getUrl(300,300)): 'https://picsum.photos/200'}}" class="card-img-top" alt="immagine dell'articolo {{$article->title}}" >
+     <img src="{{$article->images->isNotEmpty() ? $article->images->first()->getUrl(300,300): 'https://picsum.photos/200'}}" class="card-img-top" alt="immagine dell'articolo {{$article->title}}" >
     <div class="article-card-body">
         <h3 class="article-card-title">{{$article->title}}</h3>
        @if ($article->category )
