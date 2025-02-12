@@ -25,7 +25,7 @@
                                        <img src="{{ $image->getUrl(300,300) }}" alt="Immagine {{$key + 1}} dell'articolo {{$article_to_check->title}}">
                                     </div>
                                    <div class="col-md-5 py-3">
-                                     <h5>Label</h5>
+                                     
                                      <h5>Labels</h5>
                                             @if ($image->labels)
                                               @foreach ($image->labels as $label )
@@ -35,7 +35,7 @@
                                                <p>No label</p>
                                             @endif
                                    </div>
-                                    <div class="col-md-8 ps-3">
+                                    <div class="col-md-3 ps-3">
                                         <div class="card-body">
                                             <h5>Rating</h5>
                                             <div class="row justify-content-center">

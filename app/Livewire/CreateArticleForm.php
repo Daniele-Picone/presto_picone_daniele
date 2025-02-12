@@ -2,13 +2,15 @@
 
 namespace App\Livewire;
 
-use App\Jobs\GoogleVisonSafeSearch;
 use App\Models\Article;
 use Livewire\Component;
 use App\Models\Category;
+use App\Jobs\RemoveFaces;
 use App\Jobs\ResizeImage;
 use Livewire\WithFileUploads;
 use Livewire\Attributes\Validate;
+use App\Jobs\GoogleVisonSafeSearch;
+use App\Jobs\GoogleVisionLabelImage;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 
@@ -53,8 +55,13 @@ if (count($this->images) > 0) {
     foreach ($this->images as $image) {
         $newFileName = "articles/{$this->article->id}";
         $newImage = $this->article->images()->create(['path' => $image->store($newFileName, 'public')]);
-        dispatch(new ResizeImage($newImage->path, 300, 300));
-        dispatch(new GoogleVisonSafeSearch($newImage->id));
+
+        RemoveFaces::withChain([ 
+            new ResizeImage($newImage->path, 300, 300),
+            new GoogleVisonSafeSearch($newImage->id),
+            new GoogleVisionLabelImage($newImage->id)
+
+       ])->dispatch($newImage->id);
     }
     File::deleteDirectory(storage_path('/app/livewire-tmp'));
 }
