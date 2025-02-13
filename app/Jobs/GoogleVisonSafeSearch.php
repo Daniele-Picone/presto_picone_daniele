@@ -4,16 +4,15 @@ namespace App\Jobs;
 
 use App\Models\Image;
 
-use Illuminate\Foundation\Bus\Dispatchable;
+
 use Illuminate\Foundation\Queue\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
-use Google\Cloud\Vision\V1\Client\ImageAnnotatorClient;
-use Illuminate\Queue\InteractsWithQueue;
-use Illuminate\Queue\SerializesModels;
+use Google\Cloud\Vision\V1\ImageAnnotatorClient;
+
 
 class GoogleVisonSafeSearch implements ShouldQueue
 {
-    use Queueable, Dispatchable, InteractsWithQueue, SerializesModels;
+    use Queueable;
 
     /**
      * Create a new job instance.
