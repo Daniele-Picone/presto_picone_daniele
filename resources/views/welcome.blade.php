@@ -11,7 +11,7 @@
   
    <div class="container-fulid header-custom">
       <div class="row">
-        <div class="col-12">  <h1 class="text-center" >I Nostri articoli in evidenza </h1></div>
+        <div class="col-12 mt-5 mb-5">  <h1 class="text-center">{{ __('ui.I Nostri articoli in evidenza') }} </h1></div>
       </div>
      <div class="article-wrapper">
        
@@ -21,7 +21,7 @@
        
         @empty 
         <div class="col-12">
-          <h3 class="text-center"> Non sono stati aggiunti annunci al momento</h3>
+          <h3 class="text-center"> {{__('ui.Non sono stati aggiunti annunci al momento')}}</h3>
         </div>  
         @endforelse   
       </div>

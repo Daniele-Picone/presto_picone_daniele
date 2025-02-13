@@ -488,60 +488,67 @@ gap: 20px;
   text-align: center;
 }
 /* revisor */
-.img-revision-card{
+.article-container-revisor{
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+
+}
+.img-revisor-wrapper {
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  height: auto;
+ width: 500px;
+}
+.img-revision-card {
   background-color: #ffffff;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  height: 230px;
- display: flex;
- justify-content: center;
- align-items: center;
- flex-direction: column;
- width: 200px;
-transition: transform 0.3s ease-in-out;
-cursor: pointer;
-padding: 15px;
-}
- 
-.revisor-article-container{
- margin-top: 30px;
-  display: flex ;
-  justify-content: space-around;
-  align-items: center;
-  width: 100%;
-} 
-.img-revisor-wrapper{
+  height: auto; 
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 450px;
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
   padding: 15px;
-  flex-wrap: wrap;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  gap: 20px;
-  width: 50%;
-  height: 500px;
+  margin-bottom: 20px;
 }
 
-.image-card-section img{
-  width: 140px;
+.image-card-section {
+ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
   
 }
-.article-description-revisor{
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  height: auto;
-  min-height: 500px;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-  padding: 20px;
+
+.image-card-section img {
+  width: 100px; 
+  height: 100px; 
+  object-fit: cover;
+  border-radius: 50%; 
 }
-.article-description-revisor-body{
-  
-  padding: 30px;
+
+.rating-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  font-size: 18px;
+}
+
+.label-container {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  align-items: start;
-  justify-content: start;
+  width: 100%;
+  align-items: center;
+  gap: 5px;
 }
+
+
+

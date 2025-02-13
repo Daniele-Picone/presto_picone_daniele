@@ -41,7 +41,7 @@
   </div>
     <div class="article-show-body">
        <h1>{{$article->title}}</h1>
-       <p><a href="{{route('byCategory',['category'=> $article->category])}}">{{$article->category->name}}</a></p>
+       <p><a href="{{route('byCategory',['category'=> $article->category])}}">{{__( "ui." .$article->category->name)}}</a></p>
         <p>{{$article->description}}</p>
         <p>{{$article->price}}</p>
     </div>

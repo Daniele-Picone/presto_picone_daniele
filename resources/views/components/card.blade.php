@@ -8,7 +8,7 @@
     <div class="article-card-body">
         <h3 class="article-card-title">{{$article->title}}</h3>
        @if ($article->category )
-       <h5 class="article-card-title"> <a href="{{route('byCategory',['category'=> $article->category])}}"> {{$article->category->name}}</a> </h5>
+       <h5 class="article-card-title"> <a href="{{route('byCategory',['category'=> $article->category])}}"> {{__( "ui." .$article->category->name)}} </a> </h5>
        
        @endif
         <p class="article-card-description">{{$article->description}}</p>
@@ -16,5 +16,5 @@
             <span class="article-card-price">€ {{$article->price}}</span>
         </div>
     </div>
-    <a href="{{route('article.show', compact('article'))}}" class="article-card-infobtn" >Vedi dettagli</a>
+    <a href="{{route('article.show', compact('article'))}}" class="article-card-infobtn" >{{ __('ui.Vedi dettaglio') }}</a>
 </div>

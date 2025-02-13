@@ -4,7 +4,7 @@
 <div class="container-fluid mt-5">
     <div class="row justify-content-center align-items-center text-center">
         <div class="col-12">
-        <h2>Crea un Nuovo Articolo</h2>
+        <h2>{{ __('ui.Crea Articolo') }}</h2>
         </div>
        
        
